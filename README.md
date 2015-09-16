@@ -1,23 +1,19 @@
-tutum-docker-mongodb
+Dockerized MongoDb
 ====================
 
-[![Deploy to Tutum](https://s.tutum.co/deploy-to-tutum.svg)](https://dashboard.tutum.co/stack/deploy/)
-
-Base docker image to run a MongoDB database server
-
+A docker image for running production-level MongoDb for [landsat-api](https://github.com/developmentseed/landsat-api)
 
 MongoDB version
 ---------------
 
-Different versions are built from different folders. If you want to use MongoDB, please check our `tutum/mmongodb` image: https://github.com/tutumcloud/tutum-docker-mongodb
-
+Different versions are built from different folders. The images are also hosted on [DockerHub]()
 
 Usage
 -----
 
-To create the image `tutum/mongodb`, execute the following command on the tutum-mongodb folder:
+To build the image go the folder of the version you need and execute the following command:
 
-        docker build -t tutum/mongodb 2.6/ .
+        docker build .
 
 
 Running the MongoDB server
@@ -25,12 +21,12 @@ Running the MongoDB server
 
 Run the following command to start MongoDB:
 
-        docker run -d -p 27017:27017 -p 28017:28017 tutum/mongodb
+        docker run -d -p 27017:27017 -p 28017:28017 --name mongodb
 
 The first time that you run your container, a new random password will be set.
 To get the password, check the logs of the container by running:
 
-        docker logs <CONTAINER_ID>
+        docker logs mongodb
 
 You will see an output like the following:
 
