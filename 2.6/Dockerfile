@@ -17,7 +17,7 @@ ENV AUTH yes
 ENV JOURNALING yes
 
 ADD run.sh /run.sh
-ADD set_mongodb_password.sh /set_mongodb_password.sh
+ADD config.sh /config.sh
 
 EXPOSE 27017 28017
 
