@@ -18,6 +18,7 @@ ENV JOURNALING yes
 
 ADD run.sh /run.sh
 ADD config.sh /config.sh
+ADD config.js /config.js
 
 EXPOSE 27017 28017
 
