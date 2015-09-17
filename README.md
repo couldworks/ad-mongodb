@@ -1,7 +1,7 @@
 Dockerized MongoDb
 ====================
 
-[![on docker](https://img.shields.io/badge/docker-3.06-blue.svg)](https://hub.docker.com/r/astrodigital/ad-monogodb/)
+[![on docker](https://img.shields.io/badge/docker-available-green.svg)](https://hub.docker.com/r/astrodigital/ad-monogodb/)
 
 A docker image for running production-level MongoDb for [landsat-api](https://github.com/developmentseed/landsat-api)
 
