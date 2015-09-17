@@ -3,6 +3,12 @@ set -m
 
 mongodb_cmd="mongod --storageEngine $STORAGE_ENGINE"
 cmd="$mongodb_cmd --httpinterface --rest --master"
+if [ ! -f /data/db/.mongo_configured ]; then
+    $cmd &
+    /config.sh
+    kill $(pgrep mongod)
+fi
+
 if [ "$AUTH" == "yes" ]; then
     cmd="$cmd --auth"
 fi
@@ -15,10 +21,9 @@ if [ "$OPLOG_SIZE" != "" ]; then
     cmd="$cmd --oplogSize $OPLOG_SIZE"
 fi
 
+echo "$cmd"
+
 $cmd &
 
-if [ ! -f /data/db/.mongodb_password_set ]; then
-    /config.sh
-fi
 
 fg
